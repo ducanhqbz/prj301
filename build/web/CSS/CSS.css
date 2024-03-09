@@ -1,0 +1,33 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 3, 2024, 9:17:22 PM
+    Author     : Administrator
+*/
+
+/*home page*/
+
+.underline-none {
+    text-decoration: none;
+}
+
+
+
+
+.form-radius {
+    padding: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/*Add Book*/ 
+.select-width {
+     width: 100%; /* Adjust this value to your preference */
+    /* Optional styles for better appearance */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}

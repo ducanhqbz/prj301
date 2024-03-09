@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 4, 2024, 2:58:16 AM
+    Author     : Administrator
+*/
+
+:root {
+    --header-height:56px;
+    --canvas-width:270px;
+}
+
+
+@font-face {
+    src: url(font/PonyMaker.ttf);
+    font-family: PonyMaker;
+}
+.font-ponymaker {
+    font-family: PonyMaker;
+}
+.margin-top {
+    margin-top:50px;
+}
+.hover:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+.content {
+    margin-top: 56px;
+    padding: 20px 0px ;
+    background-color:var(--background-color);
+}
+.content-part {
+    margin-top:30px;
+    padding: 0px 20px;
+}
+.outline-none {
+    outline:none;
+}
+
+
+/*navbar*/
+
+
+/*side bar*/
+
+
+.between {
+    display:flex;
+    justify-content: space-between;
+}
+
+.icon_wrapper {
+    margin-right:10px;
+    width: 40px;
+}
+.flex-left {
+    display:flex;
+    justify-content: start;
+    align-items: end;
+}
+.icon-center {
+    transform: translateY(35%);
+}
+.icon {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:20px;
+}
+
+
+
+
+@media(min-width: 992px) {
+    .nav_sidebar {
+        transform: none !important;
+        visibility: visible;
+        margin-top: calc(var(--header-height) + 29px);
+    }
+    #offcanvasExample {
+        transition: none !important;
+        width: 270px;
+    }
+    .content {
+        margin-left : var(--canvas-width);
+        padding: 20px 12px;
+
+    }
+}

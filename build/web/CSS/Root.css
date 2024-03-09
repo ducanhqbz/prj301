@@ -1,0 +1,28 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 4, 2024, 2:58:00 AM
+    Author     : Administrator
+*/
+
+:root {
+    --grey-text:#777777;
+    --primary-color: #212529;
+    --bs-offcanvas-transition: unset;
+    --canvas-width:270px;
+    --background-color:#ebebeb;
+    --radius-standard: 20px;
+}
+
+html {
+    background-color:var(--background-color); 
+}
+
+.outline-none:focus {
+    box-shadow: none;
+    border-color: unset;
+}
+
+
