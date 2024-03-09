@@ -51,7 +51,7 @@
                                         <th scope="col">${x.getCopiesOwned()}</th>
                                         <td>
                                             <a href="editBook?book_id=${x.getId()}" class="badge text-bg-success underline-none">Edit</a>
-                                            <a href="deletebook?book_id=${x.getId()}" onclick="return confirm('Are you sure you want to delete this item?');" class="badge text-bg-success underline-none">Remove</a>
+                                            <a href="deleteBook?book_id=${x.getId()}" onclick="return confirm('Are you sure you want to delete this item?');" class="badge text-bg-success underline-none">Remove</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

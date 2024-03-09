@@ -8,6 +8,7 @@ import jakarta.servlet.jsp.jstl.sql.Result;
 import model.Author;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Category;
 import model.book;
@@ -66,6 +67,28 @@ public class Dao extends DBContext {
         return null;
     }
 
+    public ArrayList<Author> getAllAuthor() {
+        ArrayList<Author> listauthor = new ArrayList<>();
+        String sql = "select * from author";
+
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String first_name = rs.getString("first_name");
+                String last_name = rs.getString("last_name");
+                Author auth = new Author(id, first_name, last_name);
+                listauthor.add(auth);
+
+            }
+            return listauthor;
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
     public Category GetCateByID(int id) {
 
         String sql = "SELECT [id]\n"
@@ -87,6 +110,44 @@ public class Dao extends DBContext {
         } catch (Exception e) {
         }
         return null;
+    }
+    public void DeleteBook(int id){
+    String sql = "DELETE FROM [dbo].[book]\n" +
+"      WHERE id = ?";
+    try {
+    PreparedStatement st = connection.prepareStatement(sql);
+    st.setInt(1, id);
+    st.executeUpdate();
+    } catch (SQLException e){}
+    
+    }
+
+    public void UpdateBook(book book) {
+        String sql = "UPDATE [dbo].[book]\n"
+                + "   SET [title] = ?\n"
+                + "      ,[category_id] =?\n"
+                + "      ,[author_id] = ?\n"
+                + "      ,[publication_date] = ?\n"
+                + "      ,[copies_owned] = ?\n"
+                + "      ,[images] =?\n"
+                + " WHERE id = ?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            if (book != null) {
+                st.setString(1, book.getTitle());
+                st.setInt(2, book.getCategory().getId());
+                st.setInt(3, book.getAuthor().getId());
+                st.setDate(4, java.sql.Date.valueOf(book.getPublicationDate()));
+                st.setInt(5, book.getCopiesOwned());
+                st.setString(6, book.getImages());
+                st.setInt(7, book.getId());
+                st.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            System.out.println("e");
+        }
+
     }
 
     public ArrayList<book> GetAll() {
@@ -118,10 +179,12 @@ public class Dao extends DBContext {
         Dao dao = new Dao();
         System.out.println(dao.GetAuthorByID(5).toString());
 
-        ArrayList<book> list = dao.GetAll();
-        for (book book : list) {
-            System.out.println(book);
+        ArrayList<Author> list = dao.getAllAuthor();
+      
+        for (Author author : list) {
+            System.out.println(author);
 
         }
-    }
-}
+    
+    
+    }}

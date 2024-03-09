@@ -8,6 +8,18 @@
         <servlet-name>editBook</servlet-name>
         <servlet-class>controller.editBook</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>editbook2</servlet-name>
+        <servlet-class>controller.editbook2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteBook</servlet-name>
+        <servlet-class>controller.deleteBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addbook</servlet-name>
+        <servlet-class>controller.addbook</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListAllBook</servlet-name>
         <url-pattern>/ListAllBook</url-pattern>
@@ -15,5 +27,17 @@
     <servlet-mapping>
         <servlet-name>editBook</servlet-name>
         <url-pattern>/editBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editbook2</servlet-name>
+        <url-pattern>/editbook2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteBook</servlet-name>
+        <url-pattern>/deleteBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addbook</servlet-name>
+        <url-pattern>/addbook</url-pattern>
     </servlet-mapping>
 </web-app>
